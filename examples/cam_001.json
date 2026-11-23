@@ -1,0 +1,77 @@
+{
+  "camera_id": "cam_001",
+  "speed": {
+    "enabled": true,
+    "mode": "hybrid_ab_realtime",
+    "speed_limit_kmh": 60.0,
+    "line_a": [
+      [
+        6,
+        8
+      ],
+      [
+        946,
+        8
+      ]
+    ],
+    "line_b": [
+      [
+        8,
+        530
+      ],
+      [
+        944,
+        530
+      ]
+    ],
+    "real_distance_m": 15.0,
+    "meter_per_pixel": 0.05
+  },
+  "parking": {
+    "enabled": true,
+    "rois": [
+      [
+        [
+          6,
+          14
+        ],
+        [
+          944,
+          18
+        ],
+        [
+          941,
+          508
+        ],
+        [
+          21,
+          509
+        ]
+      ]
+    ],
+    "min_stay_sec": 60.0,
+    "max_displacement_px": 20.0
+  },
+  "reverse": {
+    "enabled": true,
+    "lanes": [
+      {
+        "name": "lane_1",
+        "polygon": [],
+        "legal_direction": [
+          [
+            363,
+            180
+          ],
+          [
+            352,
+            452
+          ]
+        ],
+        "min_duration_sec": 2.0,
+        "min_displacement_px": 40.0
+      }
+    ],
+    "cos_threshold": -0.3
+  }
+}
