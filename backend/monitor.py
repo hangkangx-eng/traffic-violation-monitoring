@@ -20,7 +20,7 @@ class WebVideoProcessor(VideoProcessor):
     Local files stop at EOF instead of looping trajectories over a discontinuity.
     """
     def __init__(self, snapshots, on_event, on_end):
-        super().__init__(snapshot_dir=snapshots)
+        super().__init__(snapshot_dir=snapshots, strict_yolo=True)
         self.on_event = on_event
         self.on_end = on_end
         self.telemetry = {'processed_frames': 0, 'active_tracks': 0, 'fps': 0,

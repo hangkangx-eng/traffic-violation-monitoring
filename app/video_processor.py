@@ -17,7 +17,7 @@ from app.ultralytics_tracker import UltralyticsTracker
 
 
 class VideoProcessor:
-    def __init__(self, snapshot_dir: Path, frame_size: tuple[int, int] = (960, 540)) -> None:
+    def __init__(self, snapshot_dir: Path, frame_size: tuple[int, int] = (960, 540), *, strict_yolo: bool = False) -> None:
         self.snapshot_dir = snapshot_dir
         self.snapshot_dir.mkdir(parents=True, exist_ok=True)
         self.frame_width, self.frame_height = frame_size
@@ -32,6 +32,8 @@ class VideoProcessor:
                 device="auto",
             )
         except Exception as exc:
+            if strict_yolo:
+                raise RuntimeError(f"YOLOv11 initialization failed: {exc}") from exc
             self._use_ultralytics_tracker = False
             self._tracker_init_error = str(exc)
             self.detector = VehicleDetector()

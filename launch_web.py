@@ -20,6 +20,7 @@ sys.path.insert(0, str(ROOT))
 sys.path.append(str(PROJECT))
 os.chdir(PROJECT)
 os.environ['TRAFFIC_PROJECT_ROOT'] = str(PROJECT)
+os.environ.setdefault('YOLO_AUTOINSTALL', 'false')
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
